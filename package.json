@@ -7,7 +7,8 @@
     "dev": "babel-node src/index.js",
     "lint": "eslint src/**/*.js",
     "compile": "babel --stage 0 -d dist/ src/",
-    "tape": "babel-node node_modules/argg src/test/*.es6","istanbul": "npm run compile && istanbul cover --dir coverage/istanbul node_modules/argg dist/test/*.js --report lcovonly",
+    "tape": "babel-node node_modules/argg src/test/*.es6",
+    "istanbul": "npm run compile && istanbul cover --dir coverage/istanbul node_modules/argg dist/test/*.js --report lcovonly",
     "coverage": "npm run compile && istanbul cover --dir coverage/istanbul node_modules/argg dist/test/*.js --report html",
     "coveralls": "cat ./coverage/istanbul/lcov.info | ./node_modules/coveralls/bin/coveralls.js && rm -rf ./coverage",
     "plato": "plato -d coverage/plato dist/index.js",
@@ -27,6 +28,7 @@
   "author": "Daniel Couper <danielcouper@sutor-design.com>",
   "license": "MIT",
   "devDependencies": {
+    "argg": "0.0.2",
     "babel": "^5.8.23",
     "babel-eslint": "^4.1.1",
     "coveralls": "^2.11.4",

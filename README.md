@@ -2,23 +2,26 @@ ES6 Module Starter
 
 Boilerplate for ES6 modules, using Babel.
 
+[![Build Status](https://semaphoreci.com/api/v1/projects/03a7edf4-865a-4df0-9244-3a6aa12f2cea/533329/badge.svg)](https://semaphoreci.com/dancouper/es6-module-starter)
+
 ## Prior Art
 
-Based on https://github.com/vinniegarcia/es6-module-starter; Istanbul & Coveralls have been left off for now, and I use [Semaphore](https://semaphoreci.com) for continuous integration (so no `.travis.yml`/similar).
+Based on https://github.com/vinniegarcia/es6-module-starter; I use [Semaphore](https://semaphoreci.com) for continuous integration (so no `.travis.yml`/similar).
 
 ## Usage
 
 0. Install node and npm.
-1. Clone this repo: `git clone this/repo/giturl`
+1. Clone this repo: `git clone https://github.com/DanCouper/es6-module-starter`
 2. Install dependencies: `npm i`
 3. Hack away.
+4. Add the repo to your Semaphore & Coveralls accounts.
 
 ## Modules used/included
 
 - *babel* - compiles ES6 source to ES5. The `--experimental` flag is also enabled so you can use ES7 features.
 - [*tape*](https://github.com/substack/tape) and [*argg*](https://github.com/isao/argg) for simple, effective testing. A couple of good articles on tape: [Why I use Tape instead of Mocha & so should you](https://medium.com/javascript-scene/why-i-use-tape-instead-of-mocha-so-should-you-6aa105d8eaf4) by Eric Elliott, and [Buckle up with Tape](https://medium.com/@MarcFly1103/buckle-up-with-tape-1bd5e9e828) by Marco Romero.
-- *eslint* and *babel-eslint* to analyze your code for stylistic issues.
-- *plato* to analyze the complexity of your source code.
+- [*eslint*](http://eslint.org/) and *babel-eslint* to analyze your code for stylistic issues.
+- [*plato*](https://github.com/es-analysis/plato) to analyze the complexity of your source code.
 
 These are just defaults. Feel free to swap out eslint for jshint, or tape for mocha, or whatever you use for CI instead of coveralls.
 
