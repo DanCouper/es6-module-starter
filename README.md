@@ -6,7 +6,7 @@ Boilerplate for ES6 modules, using Babel.
 
 ## Prior Art
 
-Based on https://github.com/vinniegarcia/es6-module-starter; I use [Semaphore](https://semaphoreci.com) for continuous integration (so no `.travis.yml`/similar).
+Based on a clone of https://github.com/vinniegarcia/es6-module-starter; I use [Semaphore](https://semaphoreci.com) for continuous integration (so no `.travis.yml`/similar).
 
 ## Usage
 
