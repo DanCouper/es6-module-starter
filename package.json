@@ -1,0 +1,38 @@
+{
+  "name": "es6-module-starter",
+  "version": "0.0.1",
+  "description": "Boilerplate starter kit for ES6/Babel modules.",
+  "main": "dist/index.js",
+  "scripts": {
+    "dev": "babel-node src/index.js",
+    "lint": "eslint src/**/*.js",
+    "compile": "babel --stage 0 -d dist/ src/",
+    "tape": "babel-node node_modules/argg src/test/*.es6","istanbul": "npm run compile && istanbul cover --dir coverage/istanbul node_modules/argg dist/test/*.js --report lcovonly",
+    "coverage": "npm run compile && istanbul cover --dir coverage/istanbul node_modules/argg dist/test/*.js --report html",
+    "coveralls": "cat ./coverage/istanbul/lcov.info | ./node_modules/coveralls/bin/coveralls.js && rm -rf ./coverage",
+    "plato": "plato -d coverage/plato dist/index.js",
+    "test": "npm run istanbul && npm run coveralls"
+  },
+  "repository": {
+    "type": "git"
+  },
+  "keywords": [
+    "es6",
+    "es2015",
+    "babel",
+    "boilerplate",
+    "starter",
+    "tape"
+  ],
+  "author": "Daniel Couper <danielcouper@sutor-design.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "babel": "^5.8.23",
+    "babel-eslint": "^4.1.1",
+    "coveralls": "^2.11.4",
+    "eslint": "^1.3.1",
+    "istanbul": "^0.3.19",
+    "plato": "^1.5.0",
+    "tape": "^4.2.0"
+  }
+}
