@@ -1,0 +1,6 @@
+# for Coveralls to work with Semaphore,
+# the repo token needs to be specified.
+# Rename this file to `.coveralls.yml` and enter
+# the token shown on your repo page on Coveralls.
+# This must NOT be committed publicly.
+repo_token: myrepotokenhere

@@ -21,5 +21,10 @@ build/Release
 # https://www.npmjs.org/doc/misc/npm-faq.html#should-i-check-my-node_modules-folder-into-git-
 node_modules
 
+# Coveralls service name & repo token
+# To get coveralls to work with SemaphoreCI,
+# the repo token needs to be specified, but should NOT be committed publicly.
+.coveralls.yml
+
 #generated source
 dist/
