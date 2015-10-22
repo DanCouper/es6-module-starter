@@ -18,7 +18,7 @@ Based on a clone of https://github.com/vinniegarcia/es6-module-starter; I use [S
 3. Edit info in `package.json`.
 4. Reinitialize git, commit, then `hub create && git push origin master`.
 5. Add the repo to your Coveralls account, then rename `coveralls.example.yml` to `coveralls.yml` and fill in the Coveralls repo key.
-6. Add the repo to your Semaphore account: use `npm run tape` rather than `npm test`: `npm test` runs the tests + code coverage, and the fact the `coveralls.yml` file is .gitignored means they will all fail.
+6. Add the repo to your Semaphore account: `coveralls.yml` file is .gitignored; you need to manually add the coveralls key to the settings for that repo.
 7. Hack away!
 
 ## Modules used/included
