@@ -1,10 +1,17 @@
 # ES6 Module Starter
 
-Boilerplate for ES6 modules (*with support down to stage 0 features*), using Babel.
+Boilerplate for ES6 modules (*with support down to stage 0 features*), using Babel. Test framework is [AVA](https://github.com/sindresorhus/ava). Coverage via [NYC](https://github.com/bcoe/nyc). Linting via [ESLint](http://eslint.org/).
 
 [![Build Status](https://semaphoreci.com/api/v1/projects/03a7edf4-865a-4df0-9244-3a6aa12f2cea/533329/badge.svg)](https://semaphoreci.com/dancouper/es6-module-starter)
 
 [![Coverage Status](https://coveralls.io/repos/DanCouper/es6-module-starter/badge.svg?branch=master&service=github)](https://coveralls.io/github/DanCouper/es6-module-starter?branch=master)
+
+## Notes/Todos
+
+- This [natch] has breaking changes from the pre-v1.0.0 `es6-module-starter`: the test framework and coverage tool have been changed. The API is near-identical, but be aware of this.
+- On OSx, I had permissions issues when trying to run AVA. Fixed by `sudo chown`ing the file AVA writes to in my user root `.config/` folder; not sure if this is just my setup or not, but be aware.
+- The `coveralls.yml` file is not necessary: it is present purely for the benefit of CI service, but as it is gitignored, the Coveralls repo token has to be manually entered in the CI service admin as an environment variable (*eg*, for Semaphore: got to *project settings*, select *environment variables* and add it there). **Delete this.**
+- ESLint has not been given many config options; this means it will throw up errors (for example, if Plato is run on the example code, 3 violations are shown, none of which are ctually violations). **Add sensible defaults.**
 
 
 ## Prior Art
