@@ -1,14 +1,15 @@
-ES6 Module Starter
+# ES6 Module Starter
 
-Boilerplate for ES6 modules, using Babel.
+Boilerplate for ES6 modules (*with support down to stage 0 features*), using Babel.
 
 [![Build Status](https://semaphoreci.com/api/v1/projects/03a7edf4-865a-4df0-9244-3a6aa12f2cea/533329/badge.svg)](https://semaphoreci.com/dancouper/es6-module-starter)
 
 [![Coverage Status](https://coveralls.io/repos/DanCouper/es6-module-starter/badge.svg?branch=master&service=github)](https://coveralls.io/github/DanCouper/es6-module-starter?branch=master)
 
+
 ## Prior Art
 
-Based on a clone of https://github.com/vinniegarcia/es6-module-starter; I use [Semaphore](https://semaphoreci.com) for continuous integration (so no `.travis.yml`/similar).
+Originally based on a clone of https://github.com/vinniegarcia/es6-module-starter; I use [Semaphore](https://semaphoreci.com) for continuous integration (so no `.travis.yml`/similar).
 
 ## Usage
 
@@ -18,23 +19,23 @@ Based on a clone of https://github.com/vinniegarcia/es6-module-starter; I use [S
 3. Edit info in `package.json`.
 4. Reinitialize git, commit, then `hub create && git push origin master`.
 5. Add the repo to your Coveralls account, then rename `coveralls.example.yml` to `coveralls.yml` and fill in the Coveralls repo key.
-6. Add the repo to your Semaphore account. Remeber to manually add the Coveralls repo key to the settings; `.coveralls.yml` is gitignored so will not be picked up.
+6. Add the repo to your Semaphore account: `coveralls.yml` file is .gitignored; you need to manually add the coveralls key to the settings for that repo.
 7. Hack away!
 
 ## Modules used/included
 
-- [*babel*](https://babeljs.io) - compiles ES6 source to ES5. The `--experimental` flag is also enabled so you can use ES7 features.
-- [*tape*](https://github.com/substack/tape) and [*argg*](https://github.com/isao/argg) for simple, effective testing. A couple of good articles on tape: [Why I use Tape instead of Mocha & so should you](https://medium.com/javascript-scene/why-i-use-tape-instead-of-mocha-so-should-you-6aa105d8eaf4) by Eric Elliott, and [Buckle up with Tape](https://medium.com/@MarcFly1103/buckle-up-with-tape-1bd5e9e828) by Marco Romero.
-- [*eslint*](http://eslint.org/) and *babel-eslint* to analyze your code for stylistic issues.
-- [*plato*](https://github.com/es-analysis/plato) to analyze the complexity of your source code.
+- [**babel**](https://babeljs.io) - compiles ES6 source to ES5. The `es2015` and `stage-0` presets are included, as well as `babel-cli`.
+- [**ava**](https://github.com/sindresorhus/ava) for simple, effective testing with built in ES2015 support. The interface is very similar to [tape](https://github.com/substack/tape), but tests are run concurrently and in seperate Node processes. **Note that AVA does not transpile modules automatically, so you *must* `import 'babel-core/register'` at the top of your test files before `import`ing whatever it is you're testing.**
+- [**eslint**](http://eslint.org/) (with *babel-eslint* to cover ES2015+ features) to analyze your code for stylistic issues.
+- [**nyc**](https://github.com/bcoe/nyc) for code coverage. AVA spawns the test files, so [istanbul](https://gotwarlost.github.io/istanbul/) cannot be used directly: however, NYC runs Istanbul under-the-hood.
+- [**plato**](https://github.com/es-analysis/plato) to analyze the complexity of your source code. Note that a fork of Plato with native support for ES2015 is present to avoid having to compile to a build folder before generating reports.
 
-These are just defaults. Feel free to swap out eslint for jshint, or tape for mocha, or whatever you use for CI instead of coveralls.
+These are just defaults. Feel free to swap out eslint for jshint, or ava for mocha, or whatever you use for CI instead of coveralls.
 
 ## Layout
 
 - `src/` - Your ES6 source code goes here.
-- `src/tests/` - Your ES6 tests go here.
-- `src/.eslintrc` - ESLint configuration
+- `tests/` - Your ES6 tests go here.
 - `coverage/` - Code coverage reports are output here.
 - `dist/` - Your generated ES5 source is output here. This directory is under gitignore.
 - `.gitignore` - a sensible .gitignore file to prevent you from checking in generated source.
@@ -46,11 +47,12 @@ These are just defaults. Feel free to swap out eslint for jshint, or tape for mo
 
 These scripts are the main way to interact with your module as you develop it.
 
-- `compile` - run [babel](https://babeljs.io/) to compile your ES6 source to ES5. Output goes to the `dist/` directory.
-- `lint` - run [ESLint](http://eslint.org/) on your ES6 source and reports any style errors.
-- `tape` - test your code.
-- `coverage` - run [Istanbul](https://gotwarlost.github.io/istanbul/) on your code to report coverage. Reports output in HTML to the `coverage/istanbul` directory.
-- `istanbul` - run Istanbul, but output only lcov files for coveralls to read.
-- `coveralls` - run coveralls, using Istanbul's lcov report as input.
-- `plato` - run [plato](https://github.com/es-analysis/plato), a code analysis tool, on your generated source (plato doesn't support ES6 at the moment; as soon as it does I'll swap it to analyze ES6 source).
-- `test` - run tape, Istanbul, and coveralls.
+| Command | Description |
+|---------|-------------|
+| `npm run compile` | run [babel](https://babeljs.io/) to compile your ES6 source to ES5. Output is concatenated into a single file in `dist/`. Source maps are included. |
+| `npm run lint` | runs [ESLint](http://eslint.org/) on your ES6 source and reports any style errors. |
+| `npm run ava` | test your code. Note that simply running `ava` also works. |
+| `npn run coverage` | run NYC on your code to report coverage. Reports output in HTML to `coverage/`. Also generates the `lcov.info` file that coveralls needs. |
+| `npm run coveralls` | run coveralls, using NYC's lcov report as input. |
+| `npm run plato` | run plato on your source, generating a complexity report in `coverage/`.
+| `npm test` | run AVA, NYC, and coveralls, then delete `coverage/`. |
