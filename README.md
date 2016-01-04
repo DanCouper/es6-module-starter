@@ -49,10 +49,11 @@ These scripts are the main way to interact with your module as you develop it.
 
 | Command | Description |
 |---------|-------------|
-| `npm run compile` | run [babel](https://babeljs.io/) to compile your ES6 source to ES5. Output is concatenated into a single file in `dist/`. Source maps are included. |
-| `npm run lint` | runs [ESLint](http://eslint.org/) on your ES6 source and reports any style errors. |
-| `npm run ava` | test your code. Note that simply running `ava` also works. |
-| `npn run coverage` | run NYC on your code to report coverage. Reports output in HTML to `coverage/`. Also generates the `lcov.info` file that coveralls needs. |
-| `npm run coveralls` | run coveralls, using NYC's lcov report as input. |
-| `npm run plato` | run plato on your source, generating a complexity report in `coverage/`.
-| `npm test` | run AVA, NYC, and coveralls, then delete `coverage/`. |
+| `npm run ava` | Test your code. Note that simply running `ava` also works, this alias is present for consistency. |
+| `npm run clean` | Remove the `coverage` and `dist` directories. |
+| `npm run compile` | Run [babel](https://babeljs.io/) to compile source to ES5. Files compiled to `dist/` with source maps. |
+| `npn run coverage` | Run NYC on your code to report coverage. Reports output in HTML to `coverage/`. |
+| `npm run coveralls` | Run coveralls, using NYC's lcov report as input. |
+| `npm run lint` | Runs [ESLint](http://eslint.org/) on your ES6 source and reports any style errors. |
+| `npm run plato` | Run plato on your source, generating a complexity report in `coverage/`.
+| `npm test` | Run AVA, NYC, and coveralls, then delete `coverage/`. |

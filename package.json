@@ -5,12 +5,13 @@
   "main": "src/index.js",
   "scripts": {
     "ava": "ava",
-    "compile": "babel src -d dist/index.js -s",
-    "coverage": "nyc --reporter=lcov --reporter=text-lcov npm test",
-    "coveralls": "cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js && rm -rf ./coverage",
+    "clean": "rm -rf coverage && rm -rf dist",
+    "compile": "babel src -d dist -s",
+    "coverage": "nyc --reporter=lcov npm run ava && nyc report",
+    "coveralls": "nyc npm run ava && nyc report --reporter=text-lcov | coveralls",
     "lint": "eslint src/**/*.js",
-    "plato": "plato -d coverage/plato dist/index.js",
-    "test": "npm run coverage && npm run coveralls"
+    "plato": "plato -d coverage/plato src/**/*.js",
+    "test": "npm run coveralls && rm -rf ./coverage"
   },
   "repository": {
     "type": "git",
