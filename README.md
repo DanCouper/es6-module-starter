@@ -10,7 +10,6 @@ Boilerplate for ES6 modules (*with support down to stage 0 features*), using Bab
 
 - This [natch] has breaking changes from the pre-v1.0.0 `es6-module-starter`: the test framework and coverage tool have been changed. The API is near-identical, but be aware of this.
 - On OSx, I had permissions issues when trying to run AVA. Fixed by `sudo chown`ing the file AVA writes to in my user root `.config/` folder; not sure if this is just my setup or not, but be aware.
-- The `coveralls.yml` file is not necessary: it is present purely for the benefit of CI service, but as it is gitignored, the Coveralls repo token has to be manually entered in the CI service admin as an environment variable (*eg*, for Semaphore: got to *project settings*, select *environment variables* and add it there). **Delete this.**
 - ESLint has not been given many config options; this means it will throw up errors (for example, if Plato is run on the example code, 3 violations are shown, none of which are ctually violations). **Add sensible defaults.**
 
 
@@ -25,8 +24,8 @@ Originally based on a clone of https://github.com/vinniegarcia/es6-module-starte
 2. Install dependencies: `npm i`.
 3. Edit info in `package.json`.
 4. Reinitialize git, commit, then `hub create && git push origin master`.
-5. Add the repo to your Coveralls account, then rename `coveralls.example.yml` to `coveralls.yml` and fill in the Coveralls repo key.
-6. Add the repo to your Semaphore account: `coveralls.yml` file is .gitignored; you need to manually add the coveralls key to the settings for that repo.
+5. Add the repo to your Coveralls account.
+6. Add the repo to your Semaphore account: you need to manually add the coveralls key to the settings for that repo.
 7. Hack away!
 
 ## Modules used/included
@@ -47,7 +46,6 @@ These are just defaults. Feel free to swap out eslint for jshint, or ava for moc
 - `dist/` - Your generated ES5 source is output here. This directory is under gitignore.
 - `.gitignore` - a sensible .gitignore file to prevent you from checking in generated source.
 - `package.json` - Customize this to publish your own module.
-- `.coveralls.example.yml` - Rename this to `coveralls.yml` & add your Coveralls repo token this if you use [coveralls](https://coveralls.io/) for code coverage.
 - `README.md` - Delete all this and write your own.
 
 ## npm scripts
