@@ -1,6 +1,6 @@
 {
   "name": "es6-module-starter",
-  "version": "1.2.0",
+  "version": "1.3.0",
   "description": "Boilerplate starter kit for ES2015+/Babel modules.",
   "main": "src/index.js",
   "scripts": {
@@ -17,8 +17,7 @@
     "type": "git",
     "url": "https://github.com/DanCouper/es6-module-starter"
   },
-  "keywords": [
-  ],
+  "keywords": [],
   "author": "Daniel Couper <danielcouper81@googlemail.com>",
   "license": "MIT",
   "devDependencies": {
