@@ -10,7 +10,7 @@ Boilerplate for ES6 modules (*with support down to stage 0 features*), using Bab
 
 - This [natch] has breaking changes from the pre-v1.0.0 `es6-module-starter`: the test framework and coverage tool have been changed. The API is near-identical, but be aware of this.
 - On OSx, I had permissions issues when trying to run AVA. Fixed by `sudo chown`ing the file AVA writes to in my user root `.config/` folder; not sure if this is just my setup or not, but be aware.
-- ESLint has not been given many config options; this means it will throw up errors (for example, if Plato is run on the example code, 3 violations are shown, none of which are ctually violations). **Add sensible defaults.**
+- ESLint has not been given many config options; this means it will throw up errors (for example, if Plato is run on the example code, 3 violations are shown, none of which are actually violations). **Add sensible defaults.**
 
 
 ## Prior Art
@@ -30,7 +30,8 @@ Originally based on a clone of https://github.com/vinniegarcia/es6-module-starte
 
 ## Modules used/included
 
-- [**babel**](https://babeljs.io) - compiles ES6 source to ES5. The `es2015`, `es2016`, and `stage-0` presets are included, as well as `babel-cli`.
+- [**babel**](https://babeljs.io) - compiles ES6 source to ES5. The `babel-preset-latest` plugin is included, which gives ES2015/16/17 presets,
+as well as `babel-cli`.
 - [**ava**](https://github.com/sindresorhus/ava) for simple, effective testing with built in ES2015 support. The interface is very similar to [tape](https://github.com/substack/tape), but tests are run concurrently and in seperate Node processes. **Note that AVA does not transpile modules automatically, so you *must* `import 'babel-core/register'` at the top of your test files before `import`ing whatever it is you're testing.**
 - [**eslint**](http://eslint.org/) (with *babel-eslint* to cover ES2015+ features) to analyze your code for stylistic issues.
 - [**nyc**](https://github.com/bcoe/nyc) for code coverage. AVA spawns the test files, so [istanbul](https://gotwarlost.github.io/istanbul/) cannot be used directly: however, NYC runs Istanbul under-the-hood.
