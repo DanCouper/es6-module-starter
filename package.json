@@ -18,14 +18,6 @@
     "url": "https://github.com/DanCouper/es6-module-starter"
   },
   "keywords": [
-    "es6",
-    "es2015",
-    "babel",
-    "boilerplate",
-    "starter",
-    "ava",
-    "nyc",
-    "plato"
   ],
   "author": "Daniel Couper <danielcouper81@googlemail.com>",
   "license": "MIT",
