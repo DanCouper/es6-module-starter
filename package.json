@@ -47,9 +47,7 @@
       "env", {
         "targets": {
           "browsers": ["IE >= 11", "Last 2 versions"]
-        },
-        "modules": false,
-        "loose": true
+        }
       }
     ]
   },
