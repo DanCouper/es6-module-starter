@@ -32,6 +32,9 @@ Originally based on a clone of https://github.com/vinniegarcia/es6-module-starte
 
 - [**babel**](https://babeljs.io) - compiles ES6 source to ES5. The `babel-preset-latest` plugin is included, which gives ES2015/16/17 presets,
 as well as `babel-cli`.
+- [**babel-preset-env**](https://github.com/babel/babel-preset-env) - Autoprefixer
+for Babel. Given a list of browsers to support, only transpiles code that needs
+to be transpiled.
 - [**ava**](https://github.com/sindresorhus/ava) for simple, effective testing with built in ES2015 support. The interface is very similar to [tape](https://github.com/substack/tape), but tests are run concurrently and in seperate Node processes. **Note that AVA does not transpile modules automatically, so you *must* `import 'babel-core/register'` at the top of your test files before `import`ing whatever it is you're testing.**
 - [**eslint**](http://eslint.org/) (with *babel-eslint* to cover ES2015+ features) to analyze your code for stylistic issues.
 - [**nyc**](https://github.com/bcoe/nyc) for code coverage. AVA spawns the test files, so [istanbul](https://gotwarlost.github.io/istanbul/) cannot be used directly: however, NYC runs Istanbul under-the-hood.
