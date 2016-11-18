@@ -30,9 +30,8 @@ Originally based on a clone of https://github.com/vinniegarcia/es6-module-starte
 
 ## Reinitialising using the `reset_repo.sh` script
 
-**NOTE** *this is WIP, be careful with it. It
-will irrevocably wipe out anything there previously, and there is no error handling, so
-be aware it may completely fry the repo.*
+**NOTE** *this is WIP, be very careful with it. It will irrevocably wipe out anything there previously, and there is no error handling, so be aware it may completely fry the repo. It currently wrecks package.json if you're not careful
+re. which characters you enter. MORE WORK NEEDED (probably using a node script instead, or writing it in Perl or Python)*
 
 There is a (WIP) bash script to clean the package.json and change relevant fields, and reinitialise as a new git repo.
 

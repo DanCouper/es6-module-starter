@@ -2,24 +2,25 @@
   "name": "es6-module-starter",
   "version": "1.4.1",
   "description": "Boilerplate starter kit for ES2015+/Babel modules.",
-  "main": "src/index.js",
-  "scripts": {
-    "ava": "ava",
-    "clean": "rm -rf coverage && rm -rf dist",
-    "compile": "babel src -d dist -s",
-    "coverage": "nyc --reporter=lcov npm run ava && nyc report",
-    "coveralls": "nyc npm run ava && nyc report --reporter=text-lcov | coveralls",
-    "lint": "eslint src/**/*.js",
-    "plato": "plato -d coverage/plato src/**/*.js",
-    "test": "npm run coveralls && rm -rf ./coverage"
-  },
+  "author": "Daniel Couper <danielcouper81@googlemail.com>",
+  "license": "MIT",
   "repository": {
     "type": "git",
     "url": "https://github.com/DanCouper/es6-module-starter"
   },
-  "keywords": [],
+  "keywords": [
+    "es6",
+    "es2015",
+    "babel",
+    "boilerplate",
+    "starter",
+    "ava",
+    "nyc",
+    "plato"
+  ],
   "author": "Daniel Couper <danielcouper81@googlemail.com>",
   "license": "MIT",
+  "dependencies": {},
   "devDependencies": {
     "ava": "^0.17.0",
     "babel-cli": "^6.3.17",
@@ -27,10 +28,10 @@
     "babel-eslint": "^7.0.0",
     "babel-preset-env": "0.0.8",
     "babel-preset-latest": "^6.16.0",
-    "coveralls": "^2.11.6",
+    "babel-preset-stage-0": "^6.16.0",
+    "es6-plato": "^1.0.9",
     "eslint": "^3.3.1",
-    "nyc": "^9.0.1",
-    "plato": "github:deedubs/es6-plato"
+    "nyc": "^9.0.1"
   },
   "babel": {
     "presets": [
@@ -64,5 +65,16 @@
       ],
       "strict": 0
     }
+  },
+  "main": "src/index.js",
+  "scripts": {
+    "ava": "ava",
+    "clean": "rm -rf coverage && rm -rf dist",
+    "compile": "babel src -d dist -s",
+    "coverage": "nyc --reporter=lcov npm run ava && nyc report",
+    "coveralls": "nyc npm run ava && nyc report --reporter=text-lcov | coveralls",
+    "lint": "eslint src/**/*.js",
+    "plato": "es6-plato -d coverage/plato src/**/*.js",
+    "test": "npm run coveralls && rm -rf ./coverage"
   }
 }
