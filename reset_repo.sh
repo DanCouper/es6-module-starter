@@ -26,6 +26,7 @@ if you're not sure of valid formatting.
 
 read -e -p $name_prompt name
 substitutePackageFieldVal "name" "es6-module-starter" $name
+mv ../es6-module-starter ../$name
 
 # Prompt for and edit the "description" field:
 description_prompt="

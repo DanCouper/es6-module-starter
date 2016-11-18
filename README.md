@@ -22,11 +22,24 @@ Originally based on a clone of https://github.com/vinniegarcia/es6-module-starte
 0. Install node and npm.
 1. Clone this repo: `git clone https://github.com/DanCouper/es6-module-starter`.
 2. Install dependencies: `npm i`.
-3. Edit info in `package.json`.
+3. Edit info in `package.json`.*
 4. Reinitialize git, commit, then `hub create && git push origin master`.
 5. Add the repo to your Coveralls account.
 6. Add the repo to your Semaphore account: you need to manually add the coveralls key to the settings for that repo.
 7. Hack away!
+
+## Reinitialising using the `reset_repo.sh` script
+
+There is a (WIP) bash script to rename the repo, clean the package.json and change relevant fields, and reinitialise as a new git repo.
+
+To run it, clone the repo as above, install the deps, then run
+
+```
+> chmod 755 reset_repo.sh
+> ./reset_repo.sh
+```
+
+It will take you through the necessary steps.
 
 ## Modules used/included
 
