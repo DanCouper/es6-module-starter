@@ -30,6 +30,10 @@ Originally based on a clone of https://github.com/vinniegarcia/es6-module-starte
 
 ## Reinitialising using the `reset_repo.sh` script
 
+**NOTE** *this is WIP, be careful with it. It
+will irrevocably wipe out anything there previously, and there is no error handling, so
+be aware it may completely fry the repo.*
+
 There is a (WIP) bash script to rename the repo, clean the package.json and change relevant fields, and reinitialise as a new git repo.
 
 To run it, clone the repo as above, install the deps, then run
