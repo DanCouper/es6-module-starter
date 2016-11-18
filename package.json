@@ -1,6 +1,6 @@
 {
   "name": "es6-module-starter",
-  "version": "1.4.0",
+  "version": "1.4.1",
   "description": "Boilerplate starter kit for ES2015+/Babel modules.",
   "main": "src/index.js",
   "scripts": {
