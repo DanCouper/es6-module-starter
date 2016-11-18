@@ -34,13 +34,19 @@ Originally based on a clone of https://github.com/vinniegarcia/es6-module-starte
 will irrevocably wipe out anything there previously, and there is no error handling, so
 be aware it may completely fry the repo.*
 
-There is a (WIP) bash script to rename the repo, clean the package.json and change relevant fields, and reinitialise as a new git repo.
+There is a (WIP) bash script to clean the package.json and change relevant fields, and reinitialise as a new git repo.
 
-To run it, clone the repo as above, install the deps, then run
+To run it, clone the repo, giving it the name of the project (as above), `npm install`
+the deps, then run the script. For example:
 
 ```
+> git clone https://github.com/DanCouper/es6-module-starter my-awesome-project
+> cd my-awesome-project
+> npm i
 > chmod 755 reset_repo.sh
 > ./reset_repo.sh
+# advised:
+> rm reset_repo.sh
 ```
 
 It will take you through the necessary steps.
